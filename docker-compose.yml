@@ -1,0 +1,25 @@
+version: "2.18"
+services:
+  proyectos-micro-backend:
+    container_name: proyectos-micro-backend
+    image: proyectos-micro-backend:v1
+    build:
+      context: .
+    ports:
+      - "4002" 
+    networks:
+      - proyectos-app
+    environment:
+      - MONGO_URI=${MONGO_URI}
+  balanceador-carga:
+    container_name: balanceador-carga
+    image: balanceador-carga:v1
+    build:
+      context: ./balanceador
+    ports:
+      - "4004:80"
+    networks:
+      - proyectos-app
+
+networks:
+  proyectos-app:
