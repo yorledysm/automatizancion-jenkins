@@ -2,7 +2,7 @@ version: "2.18"
 services:
   proyectos-micro-backend:
     container_name: proyectos-micro-backend
-    image: proyectos-micro-backend:v1
+    image: proyectos-micro-backend:latest
     build:
       context: .
     ports:
@@ -13,7 +13,7 @@ services:
       - MONGO_URI=${MONGO_URI}
   balanceador-carga:
     container_name: balanceador-carga
-    image: balanceador-carga:v1
+    image: balanceador-carga:latest
     build:
       context: ./balanceador
     ports:

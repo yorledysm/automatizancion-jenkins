@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clonar el Repositorio'){
             steps {
-                git branch: 'main', credentialsId: 'git-jenkins-j', url: 'https://github.com/yorledysm/automatizancion-jenkins.git'
+                git branch: 'main', credentialsId: 'git-jenkins', url: 'https://github.com/yorledysm/automatizancion-jenkins.git'
             }
         }
         stage('Construir imagen de Docker'){
